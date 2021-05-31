@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Management</title>
+    <link rel="stylesheet" href="./css/syle.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="flex">
+            <div class="logo flex">
+                <img src="./assets/icon/menu.png" alt="Menu Icon" class="menu_icon" >
+                <span class="Label"><h3>Stock Management</h3></span>
+            </div>
+            <div class="nav-menu">
+                <ul class="ul flex">
+                    <li class="active_nav"> <a href="#">Reports</a> </li>
+                    <li> <a href="#">Manage Products</a> </li>
+                    <li> <a href="#">Manage Agents</a> </li>
+                </ul>
+            </div>
+        </header>
+<!-- ############################################# -->
+        <!-- History Menu -->
+        <div class="history_div flex pd-b-5">
+            <div class="history">
+                <a href="#" class="today">আজ</a>
+                <a href="#" class="yesterday">গতকাল</a>
+            </div>
+            <div class="add_product_div flex">
+                <a href="#" class="add_product_btn">+ নতুন পণ্য</a>
+                <a href="#" class="view_1"><img src="./assets/icon/four-horizontal-lines-interface-symbol.png" alt="" height="18px"></a>
+                <a href="#" class="view_2"><img src="./assets/icon/menu_1.png" alt=""></a>
+            </div>
+        </div>
+<!-- ############################################# -->
+        <div class="products_container">
+            <table>
+                <thead>
+                    <tr>
+                        <th> #SKU </th>
+                        <th> পণ্য </th>
+                        <th> স্টক </th>
+                        <th> দর </th>
+                        <th> গ্রহণ </th>
+                        <th> ফেরত </th>
+                        <th> বিক্রয়মূল্য </th>
+                        <th style="border-right: 1px dashed;"> এজেন্ট </th>
+                        <th id="arrow"> <img src="./assets/icon/down-arrow.png" alt="Down arrow" id="img_arrow"> </th>
+                    </tr>                    
+                </thead>
+
+                <tbody id="t_body">
+                    <tr class="update_form_div " style="display: none;">
+                        <form action="" method="POST" enctype="multipart/form-data">
+                            <td colspan="8"> 
+                                <div class="flex f-space-around">
+                                    <div class="flex">
+                                        <div class='text-right'>
+                                            <p> SKU : </p>
+                                            <p> নাম : </p>
+                                            <p> ক্যাটাগরি : </p>
+                                        </div>
+                                        <div class='text-left pd-l-5'>
+                                            <p id="sku"> SKU </p>
+                                            <p id="product_name"> নাম </p>
+                                            <p id="product_category"> ক্যাটাগরি </p>
+                                        </div>
+                                    </div>
+                                    <div class="flex">
+                                        <div class='text-right'>
+                                            <p> স্টক :</p>
+                                            <p> পণ্যের দর :</p>
+                                        </div>
+                                        <div class='text-left pd-l-5'>
+                                            <p>  <input type="text" id="stock_price">  </p>
+                                            <p>  <input type="text" id="product_rate"> </p>
+                                        </div>
+                                    </div>
+                                    <div class="flex">
+                                        <div class='text-right'>
+                                            <p> গ্রহণ :</p>
+                                            <p> ফেরত : </p>
+                                        </div>
+                                        <div class='text-left pd-l-5'>
+                                            <p>  <input type="text" id="received_qty"> </p>
+                                            <p> <input type="text" id="returned_qty"> </p>
+                                        </div>
+                                    </div>
+                                    <div class="flex">
+                                        <div class='text-right'>
+                                            <p> বিক্রিত পণ্য : </p>
+                                            <p> পণ্যের মূল্য : </p>
+                                        </div>
+                                        <div class='text-left pd-l-5'>
+                                            <p> <input type="text" id="sale_price"></p>
+                                            <p> <input type="text" id="product_price"> </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        
+                            <td colspan="1">                             
+                                <div class='update_btn_div text-center'>
+                                    <p class="update"> <a href="#" id="update_btn" type="submit">আপডেট</a></p>
+                                    <p class="delete" onclick="delete_data()"> <a href="#" id="delete_btn">বাতিল</a> </p>
+                                </div>
+                            </td>
+                        </form>              
+                    </tr>  
+                </tbody>
+            </table>
+
+        </div>
+        
+        
+        <div class="left_menu" style="display: none;">
+            <div class="cancel_bar">
+                <img src="./assets/icon/cancel.png" alt="">
+            </div>
+            <ul class="flex f-direction-column nav-bar">
+               <li class="nav-item"> <a href="#" class="nav-link">Reports</a> </li>
+               <li class="nav-item"> <a href="#" class="nav-link">Manage Products</a> </li>
+               <li class="nav-item"> <a href="#" class="nav-link">Manage Agents</a> </li>
+            </ul>
+        </div>
+
+
+    </div>
+
+<script src="./js/app.js"></script>
+</body>
+</html>
